@@ -5,6 +5,8 @@ document.querySelectorAll(".drum").forEach(item =>
 });
 
 function handleClick(){
-    alert("paclick'ino");
+    //alert("paclick'ino");
+    var audio = new Audio("sounds/tom-1.mp3");
+    audio.play();
 }
 
