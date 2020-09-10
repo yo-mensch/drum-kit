@@ -6,10 +6,17 @@ document.querySelectorAll(".drum").forEach(item =>
 
 function handleClick(){
     //alert("paclick'ino");
-    
     var buttonInnerHtml=this.innerHTML;
+    makeSound(buttonInnerHtml);
+}
 
-    switch (buttonInnerHtml) {
+document.addEventListener("keydown", function (KeyboardEvent){
+    //var knopke = KeyboardEvent.key;
+    makeSound(KeyboardEvent.key);
+});
+
+function makeSound(knopke){
+    switch (knopke) {
         case "w":
             var tom1 = new Audio("sounds/tom-1.mp3");
             tom1.play();
