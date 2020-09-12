@@ -8,11 +8,13 @@ function handleClick(){
     //alert("paclick'ino");
     var buttonInnerHtml=this.innerHTML;
     makeSound(buttonInnerHtml);
+    buttonAnimation(buttonInnerHtml);
 }
 
 document.addEventListener("keydown", function (KeyboardEvent){
     //var knopke = KeyboardEvent.key;
     makeSound(KeyboardEvent.key);
+    buttonAnimation(KeyboardEvent.key);
 });
 
 function makeSound(knopke){
@@ -57,4 +59,13 @@ function makeSound(knopke){
     }
 }
 
+function buttonAnimation(currentKey){
 
+    var activeButton = document.querySelector("."+currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100);
+
+}
